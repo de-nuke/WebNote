@@ -1,0 +1,42 @@
+<div id="note-container">
+	<button class="edit-note-btn er-btn on-view-btn on-view-edit-btn">Edytuj notatkę</button>
+	<button class="delete-note-btn er-btn on-view-btn on-view-delete-btn">Usuń notatkę</button>
+	<div id="note-info-container">
+		<div id="note-info-labels">
+			<div id="title" class="note-element">
+				<span>Tytuł:</span>
+				<p>{{ note_data['title'] }}</p>
+			</div>
+			<div id="category" class="note-element">
+				<span>Kategoria:</span>
+			        <p id="category-paragraph">{{ note_data['category'] }}</p>
+			</div>
+			<div id="tag" class="note-element">
+			        <span>Etykieta:</span>
+	        		<p id="tag-paragraph">{{ note_data['tag'] }}</p>
+			</div>
+		</div>
+		<div id="note-info-numbers">
+			<div id="creation_date" class="note-element">
+				<span>Utworzono:</span>
+			        <p>{{ note_data['creation_date'] }}</p>
+			</div>
+			<div id="modification_date" class="note-element">
+				<span>Edytowano:</span>
+				<p>{{ note_data['edit_date'] }}</p>
+			</div>
+			<div id="note-id" class="note-element">
+				<span>ID: </span>
+				<p>{{ note_data['id'] }}</p>
+			</div>
+		</div>
+	</div>	
+	<div id="note-content-container">
+		<div id="content" class="note-element">
+		        <span>Treść:</span>
+		        <p>{{ note_data['content'] }}</p>
+		</div>
+	</div>
+</div>
+
+

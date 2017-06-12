@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Zaloguj sie</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_login.css') }}">
+</head>
+<body>
+	<div class="outer">
+	<div class="middle">
+	<div class="inner">
+	{% if session_exp_msg is defined %}
+	<span id="info">{{ session_exp_msg }}</span>
+	{% endif %}
+	<form action="http://edi.iem.pw.edu.pl/sutm/notesclient/loginCheck" method="POST">
+		<fieldset>
+			<legend><span>Logowanie</span></legend>
+			<input type="text" id="username" name="username" placeholder="Nazwa użytkownika" required>
+			<input type="password" id="password" name="password" placeholder="Hasło" required>
+			<button type="submit" name="submit">Zaloguj się</button>
+		</fieldset>
+	</form>
+	</div>
+	</div>
+	</div>
+</body>
+</html>

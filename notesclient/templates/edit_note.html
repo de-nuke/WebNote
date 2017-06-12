@@ -1,0 +1,35 @@
+<form id="new-note" action="http://edi.iem.pw.edu.pl/sutm/notesclient/sendEditedNote/{{note_data['id']}}" method="POST">
+	<div id="title-container" class="form-part">
+		<label for="title-input">Tytuł</label>
+		<input type="text" id="title-input" name="title-input" value="{{note_data['title']}}" autocomplete="off" >
+	</div>
+
+	<div id="category-select-container" class="form-part">
+		<span>Kategoria</span>
+		<div id="new-cat">
+        		<input type="radio" name="category-option" value="new" checked="checked">
+			<span id="span-new-cat" class="radio-label">Stwórz nową:</span>
+			<input type="text" id="new_category_text" name="new_category_text" value="{{note_data['category']}}" autocomplete="off">
+		</div>
+		<span>lub</span>
+		<div id="select-cat">
+			<input type="radio" name="category-option" value="existing">
+			<span id="span-select-cat" class="radio-label">Wybierz z istniejących:</span>
+			<select name="cat-select" form="new-note">
+			{% for category in categories %}
+			<option value="{{ category }}">{{ category }}</option>
+			{% endfor %}
+			</select>
+		</div>
+	</div>
+	
+	<div id="tag-container" class="form-part">
+		<label for="tag-input">Etykieta</label>
+		<input type="text" id="tag-input" name="tag-input" value="{{note_data['tag']}}" autocomplete="off">
+	</div>
+	<div id="content-container" class="form-part">
+		<label for"content">Treść</label>
+		<textarea form="new-note" id="content" name="content">{{note_data['content']}}</textarea>
+	</div>
+	<button type="submit" name="submit">Zapisz notatkę</button>
+</form>

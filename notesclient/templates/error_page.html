@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<title>Wystapił błąd</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style_error.css') }}">
+	<!--script src="{{ url_for ('static', filename = 'script_error.js') }}" type="text/javascript"></script-->
+        <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
+</head>
+<body>
+	<div>
+	<p>Wystąpił błąd:
+	{{ error_code }}
+	{% if error_reason is defined %}
+	- {{ error_reason }}
+	{% endif %}.
+	{% if error_info is defined %}
+	Treść błędu: {{ error_info }}
+	{% endif %}
+	</p>
+	<a href="http://edi.iem.pw.edu.pl/sutm/notesclient{{ back_location }}">Kliknij, aby powrócić do strony początkowej</a>
+	</div>
+</body>
+</html>

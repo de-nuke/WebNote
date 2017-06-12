@@ -1,0 +1,32 @@
+body {
+	background-image: url("sayagata-400px.png");
+	width: 100%;
+	text-align: center;
+}
+
+div {
+	position: absolute;
+	top: 30vh;
+	margin-left: 30vw;
+	margin-right: 30vw;
+	width: auto;
+	font-size: 24px;
+	background-color: rgba(192, 25, 25, 0.81);
+	padding: 10px;
+	border-radius: 10px;
+	color: floralwhite;
+	box-shadow: 0px 0px 15px firebrick;
+}
+
+div a {
+	color: black;
+	text-decoration: none;
+	background-color: floralwhite;
+	transition: background-color 0.1s;
+}
+
+div a:hover {
+	cursor: pointer;
+	background-color: black;
+	color: floralwhite;
+}

@@ -1,0 +1,17 @@
+<div id="items-list">
+	<ul>
+		{% for note in notes_list %}
+		<li id="{{note['id']}}"><div class="note-on-list">
+			<div class="list-element"><span class="label">Tytuł: </span><span class="note-part">{{ note['title'] }}</span></div>
+			<div class="list-element"><span class="label">Kategoria: </span><span class="note-part">{{ note['category'] }}</span></div>
+			<div class="list-element"><span class="label">Etykieta: </span><span class="note-part">{{ note['tag'] }}</span></div>
+			<div class="list-element"><span class="label">Treść: </span><span class="note-part">{{ note['content'] | safe}}</span></div>
+		</div>
+		<div class="edit-remove-panel">
+			<button class="edit-note-btn er-btn on-list-btn on-list-edit-btn">Edytuj notatkę</button>
+			<button class="delete-note-btn er-btn on-list-btn on-list-delete-btn">Usuń notatkę</button>
+		</div></li>
+		{% endfor %}
+	</ul>
+</div>
+
